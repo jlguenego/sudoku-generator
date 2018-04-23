@@ -7,7 +7,7 @@ const configNode = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'sudoku-generator.node.js',
-        libraryTarget: 'commonjs2',
+        libraryTarget: 'commonjs',
     },
     mode: 'production',
     resolve: {

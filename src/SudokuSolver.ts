@@ -1,7 +1,7 @@
 import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
 
-const a19 = () => new Array<number>(9).fill(0).map((n, i) => i + 1);
+const a19 = () => new Array(9).fill(0).map((n, i) => i + 1);
 
 function popRand(array) {
     if (array.length === 0) {

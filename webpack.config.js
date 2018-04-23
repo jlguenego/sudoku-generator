@@ -16,7 +16,6 @@ const configNode = {
     module: {
         rules: [{
             test: /\.ts$/,
-            include: path.resolve(__dirname, 'app'),
             exclude: /node_modules/,
             use: [{
                 loader: 'awesome-typescript-loader',

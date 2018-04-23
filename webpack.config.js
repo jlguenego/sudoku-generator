@@ -2,7 +2,7 @@ const path = require('path');
 
 const configNode = {
     entry: {
-        SudokuSolver: './src/SudokuSolver.ts',
+        SudokuSolver: './src/index.ts',
     },
     output: {
         path: path.resolve(__dirname, './dist'),

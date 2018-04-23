@@ -2,7 +2,7 @@
   "name": "sudoku-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/SudokuSolver.js",
   "scripts": {
     "build": "webpack --mode development",
     "unit-test": "mocha -r ts-node/register test/**/*.ts",

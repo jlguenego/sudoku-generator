@@ -1,4 +1,4 @@
-module.exports = function backtracker(config) {
+export function backtracker(config) {
     const solutions = [];
     const solution = config.getSolutionStructure();
 

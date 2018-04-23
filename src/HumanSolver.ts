@@ -23,7 +23,7 @@ function getTransposed(universe) {
 }
 
 
-class HumanSolver {
+export class HumanSolver {
 
     static getLevel(universe) {
         return universe.map(r => r.map(c => c.length).reduce((acc, n) => acc + n, 0)).reduce((acc, n) => acc + n, 0);
@@ -61,5 +61,3 @@ class HumanSolver {
         HumanSolver.removeRowDuplicate(squareList);
     }
 }
-
-module.exports = HumanSolver;

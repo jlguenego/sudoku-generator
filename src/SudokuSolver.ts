@@ -1,21 +1,17 @@
-const backtracker = require('./backtracker');
-const HumanSolver = require('./HumanSolver');
+import { backtracker } from './backtracker';
+import { HumanSolver } from './HumanSolver';
 
-const a19 = () => new Array(9).fill(0).map((n, i) => i + 1);
+const a19 = () => new Array<number>(9).fill(0).map((n, i) => i + 1);
 
 function popRand(array) {
     if (array.length === 0) {
-        throw new Error('cannot pop from an empty array', array);
+        throw new Error('cannot pop from an empty array');
     }
     const index = Math.floor(Math.random() * array.length);
     const result = array[index];
     array.splice(index, 1);
     return result;
 }
-
-// function rand() {
-//     return Math.floor(Math.random() * 9);
-// }
 
 function initGrid() {
     return new Array(9).fill(0).map(() => new Array(9).fill(0));
@@ -84,14 +80,14 @@ const config = {
     length: 81,
 };
 
-class SudokuSolver {
+export class SudokuSolver {
 
     static generate() {
         config.universe = new Array(9).fill(0).map(() => new Array(9).fill(0).map(a19));
         return backtracker(config);
     }
 
-    static carve(grid, total) {
+    static naiveCarve(grid, total) {
         let g;
         let i = 0;
         while (true) {
@@ -145,6 +141,10 @@ class SudokuSolver {
         // console.log('universe level after', HumanSolver.getLevel(universe));
     }
 
+    static carve(grid, total) {
+        return SudokuSolver.btcarve(grid, total);
+    }
+
     static btcarve(grid, total) {
         while (true) {
             try {
@@ -193,7 +193,7 @@ class SudokuSolver {
                         return result;
                     },
                     strategy: 'find-first',
-                    maxIteration: 200,
+                    maxIteration: 500,
                     length: total,
                 };
 
@@ -210,5 +210,4 @@ class SudokuSolver {
 
 }
 
-module.exports = SudokuSolver;
 

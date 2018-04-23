@@ -23,7 +23,7 @@ const grid = SudokuSolver.generate();
 const { SudokuSolver } = require('@jlguenego/sudoku-generator');
 
 const grid = SudokuSolver.generate();
-// remove 55 case while insuring there is one and only one solution.
+// remove 55 cases while insuring there is one and only one solution.
 const grid2 = SudokuSolver.carve(grid, 55);
 ```
 
@@ -39,6 +39,8 @@ If you decide to improve this software,
 just make a pull request with everything tested with [mocha](https://mochajs.org/).
 
 # Implementation details
+
+Source code written in Typescript.
 
 ## Class SudokuSolver
 

@@ -1,1 +1,1 @@
-module.exports = require('./dist/SudokuSolver');
+module.exports = require('./dist/sudoku-generator.node.js');

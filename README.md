@@ -38,6 +38,14 @@ npm test
 If you decide to improve this software, 
 just make a pull request with everything tested with [mocha](https://mochajs.org/).
 
+# Implementation details
+
+## Class SudokuSolver
+
+The `generate` method uses backtracking technics.
+
+The `carve` method also uses backtracking technics and some tricks that human do just do speed up the process.
+
 #Licence
 
 ISC 2018 Jean-Louis GUENEGO

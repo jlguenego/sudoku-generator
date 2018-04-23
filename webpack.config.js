@@ -1,6 +1,6 @@
 const path = require('path');
 
-const config = {
+const configNode = {
     entry: {
         SudokuSolver: './src/SudokuSolver.ts',
     },
@@ -9,6 +9,7 @@ const config = {
         filename: 'sudoku-generator.node.js',
         libraryTarget: 'commonjs2',
     },
+    mode: 'production',
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
     },
@@ -28,5 +29,16 @@ const config = {
     devtool: 'source-map',
     plugins: []
 };
+
+const configWeb = { ...configNode };
+
+configWeb.output = {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'sudoku-generator.web.js',
+}
+
+configWeb.mode = 'production';
+
+const config = [configNode, configWeb];
 
 module.exports = config;

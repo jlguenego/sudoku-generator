@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sudoku</title>
+</head>
+
+<body>
+    <script src="../dist/sudoku-generator.web.js"></script>
+    <script>
+
+        let grid = SudokuSolver.generate();
+        grid = SudokuSolver.carve(grid, 55);
+        const str = grid.map(r => r.join('')).join('');
+        console.log('str', str);
+
+    </script>
+</body>
+
+</html>

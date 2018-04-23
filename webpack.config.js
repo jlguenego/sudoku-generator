@@ -32,10 +32,14 @@ const configNode = {
 
 const configWeb = { ...configNode };
 
+configWeb.entry = {
+    SudokuSolver: './src/web.ts',
+};
+
 configWeb.output = {
     path: path.resolve(__dirname, './dist'),
     filename: 'sudoku-generator.web.js',
-}
+};
 
 configWeb.mode = 'production';
 

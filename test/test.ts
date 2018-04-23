@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { SudokuSolver } from '../src/SudokuSolver';
+import { SudokuSolver } from '../index';
 
 import seedrandom = require('seedrandom');
 

@@ -18,6 +18,7 @@
     "@types/mocha": "^5.2.0",
     "@types/node": "^9.6.6",
     "@types/seedrandom": "^2.4.27",
+    "awesome-typescript-loader": "^5.0.0",
     "chai": "^4.1.2",
     "jquery": "^3.3.1",
     "mocha": "^5.1.1",

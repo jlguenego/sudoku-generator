@@ -4,7 +4,7 @@ Sudoku generator and carving
 # Install
 
 ```
-npm install sudoku-generator
+npm install @jlguenego/sudoku-generator
 ```
 
 # Use
@@ -12,7 +12,7 @@ npm install sudoku-generator
 ## Generating a sudoku solution
 
 ```
-const { SudokuSolver } = require('sudoku-generator');
+const { SudokuSolver } = require('@jlguenego/sudoku-generator');
 
 const grid = SudokuSolver.generate();
 ```
@@ -20,7 +20,7 @@ const grid = SudokuSolver.generate();
 ## Carving a sudoku solution
 
 ```
-const { SudokuSolver } = require('sudoku-generator');
+const { SudokuSolver } = require('@jlguenego/sudoku-generator');
 
 const grid = SudokuSolver.generate();
 // remove 55 case while insuring there is one and only one solution.
@@ -38,6 +38,9 @@ npm test
 If you decide to improve this software, 
 just make a pull request with everything tested with [mocha](https://mochajs.org/).
 
+#Licence
+
+ISC 2018 Jean-Louis GUENEGO
 
 # Authors
 

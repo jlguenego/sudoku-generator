@@ -133,6 +133,7 @@ export class SudokuSolver {
             //     return possibilities.shift();
             // },
         };
+        console.log('length', backtracker(config2).length);
         const result = backtracker(config2).length === 1;
         return result;
     }

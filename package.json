@@ -4,7 +4,8 @@
   "description": "Sudoku generator and carving",
   "scripts": {
     "build": "webpack",
-    "unit-test": "mocha -r ts-node/register --prof test/**/*.spec.ts",
+    "unit-test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "unit-test-prof": "mocha -r ts-node/register --prof test/**/*.spec.ts",
     "e2e-test": "mocha test/e2e.js",
     "test": "npm run unit-test && npm run build && npm run e2e-test",
     "clean": "rimraf dist"

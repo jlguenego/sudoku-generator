@@ -85,7 +85,7 @@ const config = {
 export class SudokuSolver {
 
     static from(str: string) {
-        return new Array(9).fill(0).map((r, i) => new Array(9).fill(0).map((c, j) => str.charAt(i * 9 + j)));
+        return Util.makeGridFromString(str);
     }
 
     static generate() {

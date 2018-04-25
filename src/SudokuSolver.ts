@@ -1,5 +1,7 @@
 import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
+import { Util } from './Util';
+
 
 const a19 = () => new Array(9).fill(0).map((n, i) => i + 1);
 
@@ -112,13 +114,12 @@ export class SudokuSolver {
     }
 
     static checkOneSolution(grid) {
+        return SudokuSolver.getAllSolution(grid).length === 1;
+    }
 
-        const universe = grid.map(row => row.map(col => {
-            if (col === 0) {
-                return new Array(9).fill(0).map((n, i) => i + 1);
-            }
-            return [col];
-        }));
+    static getAllSolution(grid) {
+
+        const universe = Util.getUniverseFromGrid(grid);
         SudokuSolver.humanSolve(universe);
         SudokuSolver.humanSolve(universe);
         SudokuSolver.humanSolve(universe);
@@ -133,9 +134,8 @@ export class SudokuSolver {
             //     return possibilities.shift();
             // },
         };
-        console.log('length', backtracker(config2).length);
-        const result = backtracker(config2).length === 1;
-        return result;
+
+        return backtracker(config2);
     }
 
     static humanSolve(universe) {

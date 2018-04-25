@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { SudokuSolver } from '../src/index';
+import { SudokuSolver } from '../../src/index';
 
 import seedrandom = require('seedrandom');
 
@@ -42,8 +42,9 @@ describe('backtracking sudoku', () => {
 
     let grid = SudokuSolver.from('189000637736891524542300891678253149324918756915000382891000473263784915457139268');
 
-    const result = SudokuSolver.checkOneSolution(grid);
-    expect(result).equals(false);
+    const result = SudokuSolver.getAllSolution(grid);
+    console.log('result', result);
+    expect(result).to.deep.equal([]);
 
   });
 

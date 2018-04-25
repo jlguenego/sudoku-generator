@@ -26,7 +26,7 @@
     <script src="../dist/sudoku-generator.web.js"></script>
     <script src="./test.js"></script>
     <script>
-        test(describe, it, expect, SudokuSolver);
+        test(describe, it, expect, SudokuSolver, Math.seedrandom);
 
         mocha.checkLeaks();
         mocha.globals(['jQuery']);

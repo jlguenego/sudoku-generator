@@ -116,8 +116,8 @@ export class SudokuSolver {
 
     static getAllSolution(grid) {
 
-        const universe = Util.getUniverseFromGrid(grid);
-        SudokuSolver.humanSolve(universe);
+        let universe = Util.getUniverseFromGrid(grid);
+        universe = SudokuSolver.humanSolve(universe);
         const config2 = {
             ...config,
             universe,
@@ -183,7 +183,6 @@ export class SudokuSolver {
                         }
                     },
                     checkSolution: (solution, i) => {
-                        console.log('i', i);
                         // check if the last item is not equals to an existing one.
                         const last = solution[i - 1];
                         if (solution.findIndex(p => p.row === last.row && p.col === last.col) !== i - 1) {

@@ -17,11 +17,11 @@ describe('backtracking sudoku', () => {
   });
 
   it('should make a new carved sudoku', function () {
-
+    seedrandom('hello.', { global: true });
     let grid = SudokuSolver.generate();
-    grid = SudokuSolver.carve(grid, 40);
+    grid = SudokuSolver.carve(grid, 55);
     const str = grid.map(r => r.join('')).join('');
-    expect(str).equals('092700000080200700734010008003045002418090000000600000000000040000500106060000025');
+    expect(str).equals('040000050300907000068400037000260100000008260026001000000050008030000071000874000');
 
   });
 

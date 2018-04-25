@@ -8,5 +8,5 @@ seedrandom('hello.', {
   global: true
 });
 
-require('./test.js')(describe, it, expect, SudokuSolver);
+require('./test.js')(describe, it, expect, SudokuSolver, seedrandom);
 

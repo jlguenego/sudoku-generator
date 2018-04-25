@@ -32,6 +32,13 @@ describe('backtracking sudoku', () => {
     expect(result).equals(11 * 9 + (81 - 11));
   });
 
+  it('should get the sudoku sqaure in the rows', function () {
+    let grid = Util.makeGridFromString(Data.str1);
+    const universe = Util.getUniverseFromGrid(grid);
+    const result = Util.getSquareList(universe);
+    expect(result).to.deep.equal(Data.squareUniverse1);
+  });
+
 
 
 

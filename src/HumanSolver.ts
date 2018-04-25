@@ -1,14 +1,5 @@
-function getSquareList(universe) {
-    const result = [];
-    for (let i = 0; i < 9; i++) {
-        const square = [];
-        const row = Math.floor(i / 3);
-        const col = i % 3;
-        [0, 1, 2].forEach(x => [0, 1, 2].forEach(y => square.push(universe[row + x][col + y])));
-        result.push(square);
-    }
-    return result;
-}
+import { Util } from "./Util";
+
 
 function getTransposed(universe) {
     const result = [];
@@ -21,7 +12,6 @@ function getTransposed(universe) {
     }
     return result;
 }
-
 
 export class HumanSolver {
 
@@ -57,7 +47,7 @@ export class HumanSolver {
     }
 
     static removeSquareDuplicate(universe) {
-        const squareList = getSquareList(universe);
+        const squareList = Util.getSquareList(universe);
         HumanSolver.removeRowDuplicate(squareList);
     }
 }

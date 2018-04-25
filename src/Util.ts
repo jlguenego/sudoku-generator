@@ -30,4 +30,16 @@ export class Util {
     static sum(array) {
         return array.reduce((acc, n) => acc + n, 0);
     }
+
+    static getSquareList(universe) {
+        const result = [];
+        for (let i = 0; i < 9; i++) {
+            const square = [];
+            const row = Math.floor(i / 3);
+            const col = i % 3;
+            [0, 1, 2].forEach(x => [0, 1, 2].forEach(y => square.push(universe[(row * 3) + x][(col * 3) + y])));
+            result.push(square);
+        }
+        return result;
+    }
 }

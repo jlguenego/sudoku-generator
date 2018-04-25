@@ -33,7 +33,7 @@ describe('backtracking sudoku', () => {
     universe = SudokuSolver.humanSolve(universe);
 
     const size2 = Util.getUniverseSize(universe);
-    expect(size2).equals(11 * 9 + (81 - 11));
+    expect(size2).equals(94);
   });
 
   it('should have more than one solution', function () {
@@ -41,7 +41,7 @@ describe('backtracking sudoku', () => {
     let grid = SudokuSolver.from(Data.str1);
 
     const result = SudokuSolver.getAllSolution(grid);
-    console.log('result', result.length);
+    // console.log('result', result.length);
     expect(result.length).equals(2);
 
   });

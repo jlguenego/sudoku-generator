@@ -28,8 +28,8 @@ describe('human solver', () => {
   it('should restrict universe based on square duplicate', function () {
     const universe = Util.deepClone(Data.universe1);
     HumanSolver.removeSquareDuplicate(universe);
-    console.log('universe', universe);
-    expect(Util.getUniverseSize(universe)).equals(1);
+    // console.log('universe', universe);
+    expect(Util.getUniverseSize(universe)).equals(113);
   });
 
   

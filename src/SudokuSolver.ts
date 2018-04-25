@@ -135,11 +135,15 @@ export class SudokuSolver {
     static humanSolve(universe) {
         // console.log('universe level before', HumanSolver.getLevel(universe));
         let result = Util.deepClone(universe);
-        for (let i = 0; i < 4; i++) {
+        let size;
+        let newSize = Util.getUniverseSize(result);
+        do {
+            size = newSize;
             HumanSolver.removeRowDuplicate(result);
             HumanSolver.removeColDuplicate(result);
             HumanSolver.removeSquareDuplicate(result);
-        }
+            newSize = Util.getUniverseSize(result);
+        } while (newSize < size);
         // console.log('universe level after', HumanSolver.getLevel(universe));
         return result;
     }

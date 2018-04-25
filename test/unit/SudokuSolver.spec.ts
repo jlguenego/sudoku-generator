@@ -10,6 +10,7 @@ seedrandom('hello.', { global: true });
 describe('backtracking sudoku', () => {
 
   it('should make a new full sudoku', function () {
+    seedrandom('hello.', { global: true });
     const grid = SudokuSolver.generate();
     const str = grid.map(r => r.join('')).join('');
     expect(str).equals('947316852352987614168425937783269145591748263426531789679153428834692571215874396');
@@ -30,7 +31,7 @@ describe('backtracking sudoku', () => {
     expect(Util.getUniverseSize(universe)).equals(11 * 9 + (81 - 11));
 
     universe = SudokuSolver.humanSolve(universe);
-    
+
     const size2 = Util.getUniverseSize(universe);
     expect(size2).equals(11 * 9 + (81 - 11));
   });

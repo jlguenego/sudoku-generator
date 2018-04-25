@@ -2,9 +2,6 @@ import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
 import { Util } from './Util';
 
-
-const a19 = () => new Array(9).fill(0).map((n, i) => i + 1);
-
 function popRand(array) {
     if (array.length === 0) {
         throw new Error('cannot pop from an empty array');
@@ -51,7 +48,7 @@ function checkSquare(grid, x, y) {
 
 const config = {
     getSolutionStructure: initGrid,
-    universe: new Array(9).fill(0).map(() => new Array(9).fill(0).map(a19)),
+    universe: new Array(9).fill(0).map(() => new Array(9).fill(0).map(Util.MakeNewA19)),
     getPossibilities: (universe, i) => {
         const { x, y } = getXY(i);
         return universe[x][y];
@@ -89,7 +86,7 @@ export class SudokuSolver {
     }
 
     static generate() {
-        config.universe = new Array(9).fill(0).map(() => new Array(9).fill(0).map(a19));
+        config.universe = Util.getUniverseFromEmptyGrid();
         return backtracker(config);
     }
 

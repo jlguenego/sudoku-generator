@@ -7,6 +7,10 @@ seedrandom('hello.', { global: true });
 
 describe('backtracking sudoku', () => {
 
+  it('a19', function () {
+    expect(Util.MakeNewA19()).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  });
+
   it('should make a universe', function () {
 
     let grid = Util.makeGridFromString('189000637736891524542300891678253149324918756915000382891000473263784915457139268');

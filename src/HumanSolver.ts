@@ -12,7 +12,13 @@ function getTransposed(universe) {
     }
     return result;
 }
-
+/**
+ * Human solver try to reduce the universe size by applying rule for removing possibilities.
+ * The universe is a mutable object for performance purpose.
+ * 
+ * @export
+ * @class HumanSolver
+ */
 export class HumanSolver {
 
     static getLevel(universe) {
@@ -20,7 +26,6 @@ export class HumanSolver {
     }
 
     static removeRowDuplicate(universe) {
-
         universe.forEach(row => {
             const list = row.reduce((acc, set) => {
                 if (set.length === 1) {

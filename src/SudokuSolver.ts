@@ -183,6 +183,7 @@ export class SudokuSolver {
                         }
                     },
                     checkSolution: (solution, i) => {
+                        console.log('i', i);
                         // check if the last item is not equals to an existing one.
                         const last = solution[i - 1];
                         if (solution.findIndex(p => p.row === last.row && p.col === last.col) !== i - 1) {
@@ -205,6 +206,13 @@ export class SudokuSolver {
                 };
 
                 let solution = backtracker(config);
+                carvedGrid = JSON.parse(JSON.stringify(grid));
+                solution.forEach(p => {
+                    carvedGrid[p.row][p.col] = 0;
+                });
+                if (!SudokuSolver.checkOneSolution(carvedGrid)) {
+                    throw new Error('I am buggy');
+                }
                 return carvedGrid;
             } catch (e) {
                 console.log('e', e.message)

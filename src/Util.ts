@@ -1,5 +1,9 @@
 export class Util {
 
+    static deepClone(obj) {
+        return JSON.parse(JSON.stringify(obj));
+    }
+
     static makeGridFromString(str: string) {
         return new Array(9).fill(0).map((r, i) => new Array(9).fill(0).map((c, j) => +str.charAt(i * 9 + j)));
     }
@@ -18,4 +22,12 @@ export class Util {
     }
 
     static MakeNewA19 = () => new Array(9).fill(0).map((n, i) => i + 1);
+
+    static getUniverseSize(universe) {
+        return Util.sum(universe.map(row => row.map(col => col.length)).map(row => Util.sum(row)));
+    }
+
+    static sum(array) {
+        return array.reduce((acc, n) => acc + n, 0);
+    }
 }

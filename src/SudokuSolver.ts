@@ -118,9 +118,6 @@ export class SudokuSolver {
 
         const universe = Util.getUniverseFromGrid(grid);
         SudokuSolver.humanSolve(universe);
-        SudokuSolver.humanSolve(universe);
-        SudokuSolver.humanSolve(universe);
-        SudokuSolver.humanSolve(universe);
         const config2 = {
             ...config,
             universe,
@@ -137,10 +134,14 @@ export class SudokuSolver {
 
     static humanSolve(universe) {
         // console.log('universe level before', HumanSolver.getLevel(universe));
-        HumanSolver.removeRowDuplicate(universe);
-        HumanSolver.removeColDuplicate(universe);
-        HumanSolver.removeSquareDuplicate(universe);
+        let result = Util.deepClone(universe);
+        for (let i = 0; i < 4; i++) {
+            HumanSolver.removeRowDuplicate(result);
+            HumanSolver.removeColDuplicate(result);
+            HumanSolver.removeSquareDuplicate(result);
+        }
         // console.log('universe level after', HumanSolver.getLevel(universe));
+        return result;
     }
 
     static carve(grid, total) {

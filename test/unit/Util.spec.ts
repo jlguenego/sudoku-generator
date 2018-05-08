@@ -47,4 +47,17 @@ describe('backtracking sudoku', () => {
     expect(array).to.deep.equal([0, 1, 3, 4, 5, 6, 7, 8, 9]);
   });
 
+  it('should init an 9x9 array with 0', function () {
+    const array = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0]];
+    expect(Util.initGrid()).to.deep.equal(array);
+  });
+
 });

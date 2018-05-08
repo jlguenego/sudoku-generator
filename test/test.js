@@ -8,7 +8,6 @@ function test(describe, it, expect, SudokuSolver, seedrandom) {
         it('should make a new full sudoku', function () {
             const grid = SudokuSolver.generate();
             const str = grid.map(r => r.join('')).join('');
-            console.log('str', str);
             expect(str).equals('947316852352987614168425937783269145591748263426531789679153428834692571215874396');
         });
 

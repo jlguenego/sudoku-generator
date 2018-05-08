@@ -2,16 +2,6 @@ import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
 import { Util } from './Util';
 
-function popRand(array) {
-    if (array.length === 0) {
-        throw new Error('cannot pop from an empty array');
-    }
-    const index = Math.floor(Math.random() * array.length);
-    const result = array[index];
-    array.splice(index, 1);
-    return result;
-}
-
 function initGrid() {
     return new Array(9).fill(0).map(() => new Array(9).fill(0));
 }
@@ -71,7 +61,7 @@ const config = {
         return checkGrid(solution, x, y);
     },
     pop: (possibilities) => {
-        return popRand(possibilities);
+        return Util.popRand(possibilities);
         // return possibilities.shift();
     },
     strategy: 'find-first',
@@ -97,7 +87,7 @@ export class SudokuSolver {
             g = JSON.parse(JSON.stringify(grid));
             const array = new Array(81).fill(0).map((n, i) => ({ r: Math.floor(i / 9), c: i % 9 }));
             for (let i = 0; i < total; i++) {
-                const { r, c } = popRand(array);
+                const { r, c } = Util.popRand(array);
                 g[r][c] = 0;
             }
             if (SudokuSolver.checkOneSolution(g)) {
@@ -196,7 +186,7 @@ export class SudokuSolver {
                         return SudokuSolver.checkOneSolution(carvedGrid);
                     },
                     pop: (possibilities) => {
-                        const result = popRand(possibilities);
+                        const result = Util.popRand(possibilities);
                         return result;
                     },
                     strategy: 'find-first',

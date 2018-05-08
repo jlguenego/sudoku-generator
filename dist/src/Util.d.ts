@@ -1,5 +1,6 @@
 export declare class Util {
     static deepClone(obj: any): any;
+    static popRand(array: any): any;
     static makeGridFromString(str: string): number[][];
     static getUniverseFromGrid(grid: any): any;
     static getUniverseFromEmptyGrid(): number[][][];

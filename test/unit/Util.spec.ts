@@ -8,7 +8,7 @@ seedrandom('hello.', { global: true });
 
 describe('backtracking sudoku', () => {
 
-  
+
 
   it('MakeNewA19', function () {
     expect(Util.MakeNewA19()).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -39,11 +39,12 @@ describe('backtracking sudoku', () => {
     expect(result).to.deep.equal(Data.squareUniverse1);
   });
 
-
-
-
-
-
-
+  it('should randomly pop a number from an array', function () {
+    const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    seedrandom('truc', { global: true });
+    const n = Util.popRand(array);
+    expect(n).equals(2);
+    expect(array).to.deep.equal([0, 1, 3, 4, 5, 6, 7, 8, 9]);
+  });
 
 });

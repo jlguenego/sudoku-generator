@@ -4,6 +4,16 @@ export class Util {
         return JSON.parse(JSON.stringify(obj));
     }
 
+    static popRand(array) {
+        if (array.length === 0) {
+            throw new Error('cannot pop from an empty array');
+        }
+        const index = Math.floor(Math.random() * array.length);
+        const result = array[index];
+        array.splice(index, 1);
+        return result;
+    }
+
     static makeGridFromString(str: string) {
         return new Array(9).fill(0).map((r, i) => new Array(9).fill(0).map((c, j) => +str.charAt(i * 9 + j)));
     }

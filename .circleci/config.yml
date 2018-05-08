@@ -5,6 +5,7 @@
 version: 2
 jobs:
   build:
+    
     docker:
       # specify the version you desire here
       - image: circleci/node:9.11.1
@@ -15,6 +16,9 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
+
+    branches:
+      only: master
 
     steps:
       - checkout

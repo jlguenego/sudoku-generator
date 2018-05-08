@@ -2,10 +2,6 @@ import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
 import { Util } from './Util';
 
-function initGrid() {
-    return new Array(9).fill(0).map(() => new Array(9).fill(0));
-}
-
 function getXY(n) {
     return {
         x: Math.floor(n / 9),
@@ -37,7 +33,7 @@ function checkSquare(grid, x, y) {
 }
 
 const config = {
-    getSolutionStructure: initGrid,
+    getSolutionStructure: Util.initGrid,
     universe: new Array(9).fill(0).map(() => new Array(9).fill(0).map(Util.MakeNewA19)),
     getPossibilities: (universe, i) => {
         const { x, y } = getXY(i);

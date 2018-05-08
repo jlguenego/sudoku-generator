@@ -13,6 +13,26 @@ export class Util {
         array.splice(index, 1);
         return result;
     }
+    /**
+     * Initialize a grid 9x9 with 0.
+     * 
+     * @static
+     * @returns 
+     * [[0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0],
+     *  [0,0,0,0,0,0,0,0,0]]
+     * 
+     * @memberof Util
+     */
+    static initGrid() {
+        return new Array(9).fill(0).map(() => new Array(9).fill(0));
+    }
 
     static makeGridFromString(str: string) {
         return new Array(9).fill(0).map((r, i) => new Array(9).fill(0).map((c, j) => +str.charAt(i * 9 + j)));

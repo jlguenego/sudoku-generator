@@ -72,4 +72,22 @@ export class Util {
         }
         return result;
     }
+/**
+ * Compute the x y coordonnates from the string index.
+ * Example : string '189000637736891524542300891678253149324918756915000382891000473263784915457139268'
+ *                n  13
+ * outputs { x: 1, y: 4 }
+ * 
+ * 
+ * @static
+ * @param {any} n 
+ * @returns the coordonates
+ * @memberof Util
+ */
+static getXY(n) {
+        return {
+            x: Math.floor(n / 9),
+            y: n % 9
+        };
+    }
 }

@@ -60,4 +60,8 @@ describe('backtracking sudoku', () => {
     expect(Util.initGrid()).to.deep.equal(array);
   });
 
+  it('should return { x: 1, y: 4 } when n is 13', function () {
+    expect(Util.getXY(13)).to.deep.equal({ x: 1, y: 4 });
+  });
+
 });

@@ -2,12 +2,7 @@ import { backtracker } from './backtracker';
 import { HumanSolver } from './HumanSolver';
 import { Util } from './Util';
 
-function getXY(n) {
-    return {
-        x: Math.floor(n / 9),
-        y: n % 9
-    }
-}
+
 
 function checkGrid(grid, x, y) {
     return checkRow(grid, x, y) && checkCol(grid, x, y) && checkSquare(grid, x, y);
@@ -36,24 +31,24 @@ const config = {
     getSolutionStructure: Util.initGrid,
     universe: new Array(9).fill(0).map(() => new Array(9).fill(0).map(Util.MakeNewA19)),
     getPossibilities: (universe, i) => {
-        const { x, y } = getXY(i);
+        const { x, y } = Util.getXY(i);
         return universe[x][y];
     },
     resetPossibilities: (possibilities, i, universeCopy) => {
-        const { x, y } = getXY(i);
+        const { x, y } = Util.getXY(i);
         const origPossibilities = universeCopy[x][y];
         origPossibilities.forEach(n => possibilities.push(n));
     },
     resetSolution: (solution, i) => {
-        const { x, y } = getXY(i);
+        const { x, y } = Util.getXY(i);
         solution[x][y] = 0;
     },
     setSolution: (solution, i, n) => {
-        const { x, y } = getXY(i);
+        const { x, y } = Util.getXY(i);
         solution[x][y] = n;
     },
     checkSolution: (solution, i) => {
-        const { x, y } = getXY(i);
+        const { x, y } = Util.getXY(i);
         return checkGrid(solution, x, y);
     },
     pop: (possibilities) => {

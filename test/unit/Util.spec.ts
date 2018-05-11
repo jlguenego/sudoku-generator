@@ -61,7 +61,8 @@ describe('backtracking sudoku', () => {
   });
 
   it('should return { x: 1, y: 4 } when n is 13', function () {
-    expect(Util.getXY(13)).to.deep.equal({ x: 1, y: 4 });
+    const result = Util.getXY(13);
+    expect(result).to.deep.equal({ x: 1, y: 4 });
   });
 
 });

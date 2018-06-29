@@ -8,9 +8,7 @@ seedrandom('hello.', { global: true });
 
 describe('backtracking sudoku', () => {
 
-
-
-  it('MakeNewA19', function () {
+  it('MakeNewA19xxx', function () {
     expect(Util.MakeNewA19()).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
